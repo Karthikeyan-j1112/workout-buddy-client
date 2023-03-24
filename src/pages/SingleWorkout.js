@@ -33,7 +33,7 @@ export const SingleWorkout = () => {
                     'Authorization': `Bearer ${user.token}`
                 }
             }
-            axios.get(`${apiUrl}}/api/workouts/${params.id}`, config)
+            axios.get(`${apiUrl}/api/workouts/${params.id}`, config)
                 .then(response => {
                     setWorkout(response.data);
                     setUpdatedAt(response.data.updatedAt)
