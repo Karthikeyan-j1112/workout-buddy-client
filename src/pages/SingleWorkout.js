@@ -6,6 +6,7 @@ import { MdDelete, MdEdit, MdEditOff } from 'react-icons/md'
 import { UpdateForm } from "../components/UpdateForm"
 import { formatDistanceToNow } from "date-fns"
 import { useAuthContext } from '../hooks/useAuthContext'
+import { useWorkoutContext } from '../hooks/useWorkoutContext'
 
 export const SingleWorkout = () => {
 
@@ -20,6 +21,8 @@ export const SingleWorkout = () => {
 
     const params = useParams()
     const { user } = useAuthContext()
+
+    const { dispatchWorkout } = useWorkoutContext()
 
     useEffect(() => {
         if (user) {
