@@ -10,6 +10,8 @@ export const UpdateForm = ({ editable, setEditable, workout, setWorkout, emptyFi
     const params = useParams()
     const navigate = useNavigate()
 
+    const apiUrl = process.env.REACT_APP_API_URL;
+
     const saveChange = (e) => {
         e.preventDefault();
         if (!user) {
@@ -41,7 +43,7 @@ export const UpdateForm = ({ editable, setEditable, workout, setWorkout, emptyFi
 
         axios({
             method: 'patch',
-            url: `${process.env.REACT_APP_API_URL}/api/workouts/${params.id}`,
+            url: `${apiUrl}/api/workouts/${params.id}`,
             data: {
                 title: workout.title,
                 reps: workout.reps,

@@ -24,6 +24,8 @@ export const SingleWorkout = () => {
 
     const { dispatchWorkout } = useWorkoutContext()
 
+    const apiUrl = process.env.REACT_APP_API_URL;
+
     useEffect(() => {
         if (user) {
             const config = {
@@ -31,7 +33,7 @@ export const SingleWorkout = () => {
                     'Authorization': `Bearer ${user.token}`
                 }
             }
-            axios.get(`${process.env.REACT_APP_API_URL}/api/workouts/${params.id}`, config)
+            axios.get(`${apiUrl}}/api/workouts/${params.id}`, config)
                 .then(response => {
                     setWorkout(response.data);
                     setUpdatedAt(response.data.updatedAt)
@@ -57,7 +59,7 @@ export const SingleWorkout = () => {
                 'Authorization': `Bearer ${user.token}`
             }
         }        
-        axios.delete(`${process.env.REACT_APP_API_URL}/api/workouts/${workout._id}`, config)
+        axios.delete(`${apiUrl}/api/workouts/${workout._id}`, config)
             .then(response => {
                 dispatchWorkout({ type: "DELETE_WORKOUT", payload: response.data })
                 const toastMsg = () => (

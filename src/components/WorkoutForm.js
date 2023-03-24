@@ -14,6 +14,8 @@ export const WorkoutForm = () => {
     const { dispatchWorkout } = useWorkoutContext()
     const { user } = useAuthContext()
 
+    const apiUrl = process.env.REACT_APP_API_URL;
+
     const submitHandler = (e) => {
         e.preventDefault()
 
@@ -45,7 +47,7 @@ export const WorkoutForm = () => {
 
         axios({
             method: 'post',
-            url: `${process.env.REACT_APP_API_URL}/api/workouts`,
+            url: `${apiUrl}/api/workouts`,
             data: workout,
             headers: {
                 'Authorization': `Bearer ${user.token}`

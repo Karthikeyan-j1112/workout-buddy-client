@@ -13,6 +13,8 @@ export const WorkoutsDetails = ({ workout }) => {
     const { dispatchWorkout } = useWorkoutContext()
     const { user } = useAuthContext()
 
+    const apiUrl = process.env.REACT_APP_API_URL;
+
     const deleteHandler = () => {
         if (!user) {
             return
@@ -25,7 +27,7 @@ export const WorkoutsDetails = ({ workout }) => {
                 'Authorization': `Bearer ${user.token}`
             }
         }        
-        axios.delete(`${process.env.REACT_APP_API_URL}/api/workouts/${workout._id}`, config)
+        axios.delete(`${apiUrl}/api/workouts/${workout._id}`, config)
             .then(response => {
                 dispatchWorkout({ type: "DELETE_WORKOUT", payload: response.data })
                 const toastMsg = () => (

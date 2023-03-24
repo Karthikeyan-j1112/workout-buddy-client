@@ -10,6 +10,8 @@ export const Home = () => {
   const { workouts, dispatchWorkout } = useWorkoutContext()
 
   const { user } = useAuthContext()
+  
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     if (user) {
@@ -18,7 +20,7 @@ export const Home = () => {
           'Authorization': `Bearer ${user.token}`
         }
       }
-      axios.get(`${process.env.REACT_APP_API_URL}/api/workouts`,config)
+      axios.get(`${apiUrl}/api/workouts`,config)
         .then(response => {
           dispatchWorkout({
             type: "SET_WORKOUTS",

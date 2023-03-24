@@ -10,10 +10,8 @@ export const useLogin = () => {
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(null)
 
-    console.log(process.env.REACT_APP_API_URL)
-    
     const apiUrl = process.env.REACT_APP_API_URL;
-    
+
     const login = (email, password) => {
         setIsLoading(true)
         setError(null)
