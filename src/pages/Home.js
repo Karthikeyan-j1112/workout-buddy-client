@@ -13,14 +13,12 @@ export const Home = () => {
 
   useEffect(() => {
     if (user) {
-
       const config = {
         headers: {
           'Authorization': `Bearer ${user.token}`
         }
       }
-
-      axios.get('/api/workouts',config)
+      axios.get(`${process.env.REACT_APP_API_URL}/api/workouts`,config)
         .then(response => {
           dispatchWorkout({
             type: "SET_WORKOUTS",
@@ -31,7 +29,7 @@ export const Home = () => {
           console.log(err);
         })
     }
-  }, [])
+  }, [user])
 
   return (
     <div className="home" >

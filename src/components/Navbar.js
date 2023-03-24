@@ -10,13 +10,15 @@ export const Navbar = () => {
 
     const handleLogout = () => {
         logout()
+        
     }
+    
 
     return (
         <header>
             <div className="container">
                 <Link to={'/'}>
-                    <h1>Workout Buddy</h1>
+                    <h1>Workout Buddy</h1>                    
                 </Link>
                 <nav>
                     {(!user) ? (

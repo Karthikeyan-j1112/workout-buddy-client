@@ -41,7 +41,7 @@ export const UpdateForm = ({ editable, setEditable, workout, setWorkout, emptyFi
 
         axios({
             method: 'patch',
-            url: `/api/workouts/${params.id}`,
+            url: `${process.env.REACT_APP_API_URL}/api/workouts/${params.id}`,
             data: {
                 title: workout.title,
                 reps: workout.reps,

@@ -15,7 +15,7 @@ export const useLogin = () => {
         setError(null)
         axios({
             method: 'post',
-            url: '/api/user/login',
+            url: `${process.env.REACT_APP_API_URL}/api/user/login`,
             headers: { 'Content-Type': 'application/json' },
             data: { email, password }
         })

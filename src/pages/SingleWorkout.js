@@ -31,19 +31,17 @@ export const SingleWorkout = () => {
                     'Authorization': `Bearer ${user.token}`
                 }
             }
-            axios.get(`/api/workouts/${params.id}`, config)
+            axios.get(`${process.env.REACT_APP_API_URL}/api/workouts/${params.id}`, config)
                 .then(response => {
                     setWorkout(response.data);
                     setUpdatedAt(response.data.updatedAt)
                 })
                 .catch(err => {
-                    console.log(err);
-                    if (err.response.data.error === 'No such Workout exist') {
-                        navigate('/', { replace: true })
-                    }
+                    console.log(err);                    
+                    navigate('/', { replace: true })                    
                 })
         }
-    }, [])
+    }, [user])
 
     const navigate = useNavigate()
     const deleteHandler = () => {
@@ -59,7 +57,7 @@ export const SingleWorkout = () => {
                 'Authorization': `Bearer ${user.token}`
             }
         }        
-        axios.delete(`/api/workouts/${workout._id}`, config)
+        axios.delete(`${process.env.REACT_APP_API_URL}/api/workouts/${workout._id}`, config)
             .then(response => {
                 dispatchWorkout({ type: "DELETE_WORKOUT", payload: response.data })
                 const toastMsg = () => (

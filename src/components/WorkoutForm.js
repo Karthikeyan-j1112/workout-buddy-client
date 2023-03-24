@@ -45,7 +45,7 @@ export const WorkoutForm = () => {
 
         axios({
             method: 'post',
-            url: '/api/workouts',
+            url: `${process.env.REACT_APP_API_URL}/api/workouts`,
             data: workout,
             headers: {
                 'Authorization': `Bearer ${user.token}`
