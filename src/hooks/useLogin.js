@@ -10,12 +10,16 @@ export const useLogin = () => {
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(null)
 
+    console.log(process.env.REACT_APP_API_URL)
+    
+    const apiUrl = process.env.REACT_APP_API_URL;
+    
     const login = (email, password) => {
         setIsLoading(true)
         setError(null)
         axios({
             method: 'post',
-            url: `${process.env.REACT_APP_API_URL}/api/user/login`,
+            url: `${apiUrl}/api/user/login`,
             headers: { 'Content-Type': 'application/json' },
             data: { email, password }
         })
