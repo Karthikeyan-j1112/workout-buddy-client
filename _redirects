@@ -1,1 +1,3 @@
+/api/* https://workoutbuddy-whov.onrender.com/api/:splat 200
 
+/* /:splat 200
