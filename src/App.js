@@ -12,6 +12,8 @@ import { useAuthContext } from './hooks/useAuthContext';
 function App() {
   const { user } = useAuthContext();
 
+  console.log(process.env,process.env.REACT_APP_API_URL)
+  
   return (
     <div className="App">
       <Navbar />
