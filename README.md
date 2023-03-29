@@ -1,78 +1,26 @@
-# Getting Started with Create React App
+# Workout Buddy Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend part of the full stack project called Workout buddy. This web app is built on React.js
 
-## Available Scripts
+This serves the user to create account and maintain their Workout details.
+The user can add new workouts, delete and update existing workouts.
 
-In the project directory, you can run:
+This webapp uses [https://workoutbuddy-whov.onrender.com](https://workoutbuddy-whov.onrender.com) as the backend api to create users and workouts and maintain them.
 
-### `npm start`
+The workouts are specific for the users and they are accessible only if the user is logged in. The user login will be verified with the help of JWT(JSON web token) that will be provided by the server(api) at the time of login or signup.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The routing of this web app is handled with the help of [react-router-dom](https://reactrouter.com/en/main) package. And the request to backend api and receiving response from it is handled with the help of [axios](https://axios-http.com/) package.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To enhance the user experience, this webapp also using some extra npm packages like:
+* [react toastify](https://fkhadra.github.io/react-toastify/introduction)
+* [react icons](https://react-icons.github.io/react-icons)
 
-### `npm test`
+This web app is hosted online with the help of [Netilfy.com](https://www.netlify.com/).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Link for this webapp: 
+[https://workout-buddy-karthikeyan.netlify.app](https://workout-buddy-karthikeyan.netlify.app/)
 
-### `npm run build`
+The backend api is created with help of Express.js and Node.js which is hosted online on [render.com](https://render.com/).
+Link for the api: [https://workoutbuddy-whov.onrender.com](https://workoutbuddy-whov.onrender.com)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# workout-buddy
-# workout-buddy
-# workout-buddy-client
-# workout-buddy-client
-# workout-buddy-client
-# workout-buddy-client
-# workout-buddy-client
-# workout-buddy-client
+Source code of the backend api - [https://github.com/Karthikeyan-j1112/workout-buddy](https://github.com/Karthikeyan-j1112/workout-buddy)
